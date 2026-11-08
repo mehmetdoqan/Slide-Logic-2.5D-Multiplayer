@@ -11,3 +11,11 @@
 5. index.html içinde FIREBASE_CONFIG bölümüne apiKey, authDomain, projectId, appId değerlerini yapıştır.
 6. Authentication → Settings → Authorized domains: kullaniciadin.github.io ekle.
 7. index.html'i GitHub deposuna yükle, Settings → Pages → main / root.
+
+
+apiKey: "AIzaSyAf_evTEmSZ0Q30maUEBpznrm-3MuXq_kA",
+  authDomain: "slide-logic-46078.firebaseapp.com",
+  projectId: "slide-logic-46078",
+  storageBucket: "slide-logic-46078.firebasestorage.app",
+  messagingSenderId: "438427541870",
+  appId: "1:438427541870:web:e4fa94260483921d4f617f"
