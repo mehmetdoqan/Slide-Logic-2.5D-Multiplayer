@@ -19,3 +19,7 @@ apiKey: "AIzaSyAf_evTEmSZ0Q30maUEBpznrm-3MuXq_kA",
   storageBucket: "slide-logic-46078.firebasestorage.app",
   messagingSenderId: "438427541870",
   appId: "1:438427541870:web:e4fa94260483921d4f617f"
+
+
+sınıf kodu : PENXEP
+öğretmen paneli mehmetdoqan@gmail.com Mehmet01.
