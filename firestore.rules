@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Öğretmen: Firebase'de oluşturduğun e-posta/şifre hesabı (anonim değil)
+    function teacher() {
+      return request.auth != null
+        && request.auth.token.firebase.sign_in_provider == 'password'
+        && request.auth.token.email == 'OGRETMEN_E_POSTASI_BURAYA';
+    }
+
+    // Sınıf kayıtları (takma adların listesi): sadece öğretmen
+    match /roster/{code} {
+      allow read, write: if teacher();
+    }
+
+    // Öğrenci ilerleme kayıtları (isim içermez)
+    match /join/{h} {
+      allow get: if request.auth != null;          // öğrenci kendi kaydını açar
+      allow list: if teacher();                    // listeyi sadece öğretmen görür
+      allow create, delete: if teacher();
+      allow update: if request.auth != null
+        && request.resource.data.keys().hasOnly(['ok', 'lv', 'hn', 'seen', 'cur']);
+    }
+  }
+}
